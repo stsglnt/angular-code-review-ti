@@ -6,6 +6,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterByAuthorPipe } from './filter-by-author.pipe';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   imports: [
@@ -15,8 +17,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     HttpClientModule,
     MatTabsModule,
     MatCardModule,
+    MatInputModule,
   ],
-  declarations: [AppComponent],
+  declarations: [AppComponent, FilterByAuthorPipe],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

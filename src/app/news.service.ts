@@ -28,7 +28,10 @@ export class NewsServices {
   getTopStories() {
     return this.getTopStoriesIds().pipe(
       switchMap((ids: number[]) => {
-        return from(ids).pipe(concatMap((id) => this.getStory(id)));
+        return from(ids).pipe(
+          take(10),
+          concatMap((id) => this.getStory(id))
+        );
       })
     );
   }
@@ -36,7 +39,10 @@ export class NewsServices {
   getNewStories() {
     return this.getTopStoriesIds().pipe(
       switchMap((ids: number[]) => {
-        return from(ids).pipe(concatMap((id) => this.getStory(id)));
+        return from(ids).pipe(
+          take(10),
+          concatMap((id) => this.getStory(id))
+        );
       })
     );
   }

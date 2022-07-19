@@ -9,7 +9,8 @@ import { NewsServices } from './news.service';
 export class AppComponent {
   newStories: any[] = [];
   topStories: any[] = [];
-
+  author: string;
+  
   constructor(private newsService: NewsServices) {
     this.getTopStories();
     this.getNewStories();

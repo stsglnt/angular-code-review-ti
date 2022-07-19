@@ -1,7 +1,16 @@
+<mat-form-field>
+  <input
+    placeholder="Filter by author"
+    matInput
+    type="text"
+    [(ngModel)]="author"
+  />
+</mat-form-field>
+
 <mat-tab-group>
   <mat-tab label="New Stories">
     <br />
-    <ng-container *ngFor="let newStory of newStories">
+    <ng-container *ngFor="let newStory of newStories | filterByAuthor: author">
       <mat-card>
         <mat-card-title>
           <a href="{{ newStory.url }}">
@@ -18,7 +27,7 @@
   </mat-tab>
 
   <mat-tab label="Top Stories">
-    <ng-container *ngFor="let topStory of topStories">
+    <ng-container *ngFor="let topStory of topStories | filterByAuthor: author">
       <br />
       <mat-card>
         <mat-card-title>

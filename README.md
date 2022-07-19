@@ -13,4 +13,4 @@ What can be improved:
 6. Add virtuall scroll
 7. Create fake paginated fetching. Instead of fetching all items at once fetch only set amount of element from ids array;
 8. use mergeMap instead of concatMap -> add sorting if order is important;
-9. 
+9. Add check for null and toLocaleLowerCase to filter;
