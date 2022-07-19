@@ -4,13 +4,13 @@ import { NewsServices } from './news.service';
 @Component({
   selector: 'my-app',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
   newStories: any[] = [];
   topStories: any[] = [];
   author: string;
-  
+
   constructor(private newsService: NewsServices) {
     this.getTopStories();
     this.getNewStories();
@@ -23,7 +23,7 @@ export class AppComponent {
   }
 
   getNewStories() {
-    this.newsService.getTopStories().subscribe((res) => {
+    this.newsService.getNewStories().subscribe((res) => {
       this.newStories.push(res);
     });
   }
@@ -31,6 +31,4 @@ export class AppComponent {
   getHumanTypeDate(time) {
     return new Date(time * 1000).toLocaleString();
   }
-
-
 }

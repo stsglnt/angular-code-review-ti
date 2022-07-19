@@ -37,7 +37,7 @@ export class NewsServices {
   }
 
   getNewStories() {
-    return this.getTopStoriesIds().pipe(
+    return this.getNewStoriesIds().pipe(
       switchMap((ids: number[]) => {
         return from(ids).pipe(
           take(10),
