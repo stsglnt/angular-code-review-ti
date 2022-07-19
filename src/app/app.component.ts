@@ -11,7 +11,9 @@ export class AppComponent {
   topStories: any[] = [];
   author: string;
 
-  constructor(private newsService: NewsServices) {
+  constructor(private newsService: NewsServices) {}
+
+  ngAfterContentInit() {
     this.getTopStories();
     this.getNewStories();
   }
