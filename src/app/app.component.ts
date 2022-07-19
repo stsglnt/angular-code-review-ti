@@ -24,7 +24,6 @@ export class AppComponent {
 
   getNewStories() {
     this.newsService.getNewStories().subscribe((res) => {
-      console.log('res', res);
       this.newStories.push(res);
     });
   }
